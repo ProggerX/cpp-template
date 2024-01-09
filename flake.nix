@@ -31,7 +31,6 @@
 				}
 			);
 		in rec {
-			defaultTemplate.path = ./.;
 			defaultApp = flake-utils.lib.mkApp {
 				drv = defaultPackage;
 			};
