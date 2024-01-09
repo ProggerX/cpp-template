@@ -12,9 +12,6 @@
 			pkgs = import nixpkgs {
 				inherit system;
 			};
-			tpl = {
-				path = ./.;
-			};
 			cpp-template = (with pkgs; stdenv.mkDerivation {
 					name = "cpp-project";
 					src = ./.;
@@ -34,7 +31,7 @@
 				}
 			);
 		in rec {
-			defaultTemplate = tpl;
+			defaultTemplate.path = ./.;
 			defaultApp = flake-utils.lib.mkApp {
 				drv = defaultPackage;
 			};
